@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f5f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* Header & Nav Styling */
+
+header {
+    background-color: #1a1b35;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #a5b4fc;
+    /* Para sa 'Hub' */
+}
+
+.logo .white-text {
+    color: #ffffff;
+    /* Para sa kulay puti nga 'Campus' */
+}
+
+nav a {
+    color: #b0b0d1;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 17px;
+    transition: color 0.2s;
+}
+
+nav a.active,
+nav a:hover {
+    color: #fff;
+    border-bottom: 2px solid #818cf8;
+    padding-bottom: 3px;
+}
+
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: #fff;
+}
+
+
+/* Toggle Switch Design */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4b5563;
+    transition: .4s;
+    border-radius: 26px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #6366f1;
+}
+
+input:checked+.slider:before {
+    transform: translateX(24px);
+}
+
+
+/* Main Content & Profile Card (Gipadak-an tanan) */
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.profile-card {
+    background: #ffffff;
+    width: 480px;
+    padding: 45px 40px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-top: 5px solid #6366f1;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    background-color: #4f46e5;
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 24px auto;
+}
+
+.profile-card h2 {
+    font-size: 26px;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 15px;
+    color: #6b7280;
+    margin-bottom: 24px;
+}
+
+.badges {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.badge {
+    background-color: #e0e7ff;
+    color: #4338ca;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    /* Dito ginagawang bold ang teksto */
+    border-radius: 22px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#likeBtn {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+#likeBtn:hover {
+    background-color: #4338ca;
+}
+
+
+/* Ito ang naglalagay ng puting background sa numerong 24 */
+
+#likeCount {
+    background-color: #ffffff;
+    color: #4f46e5;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#resetBtn {
+    background-color: transparent;
+    color: #4f46e5;
+    border: 1px solid #4f46e5;
+    padding: 12px 26px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#resetBtn:hover {
+    background-color: #e0e7ff;
+}
+
+
+/* Footer Styling */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 15px;
+    color: #6b7280;
+}
+
+
+/* Dark Mode Theme Styles */
+
+body.dark-mode {
+    background-color: #111827;
+    color: #f9fafb;
+}
+
+body.dark-mode header {
+    background-color: #0f172a;
+}
+
+body.dark-mode .profile-card {
+    background-color: #1f2937;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .profile-card h2 {
+    color: #f9fafb;
+}
+
+body.dark-mode .subtitle,
+body.dark-mode footer {
+    color: #9ca3af;
+}
+
+body.dark-mode .badge {
+    background-color: #374151;
+    color: #93c5fd;
+}
+
+body.dark-mode #resetBtn {
+    color: #93c5fd;
+    border-color: #6366f1;
+}
+
+body.dark-mode #resetBtn:hover {
+    background-color: #374151;
+}
